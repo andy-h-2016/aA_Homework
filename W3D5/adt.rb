@@ -16,6 +16,24 @@ class Stack
     @stack[-1]
   end
 
-
 end
 
+
+class Queue
+
+  def initialize(*args)
+    @queue = [*args]
+  end
+
+  def enqueue(el)
+    @queue.push(el)
+  end
+
+  def dequeue
+    @queue.shift
+  end
+
+  def peek
+    @queue[0]
+  end
+end
