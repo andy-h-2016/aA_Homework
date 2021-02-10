@@ -25,11 +25,10 @@ class Simon
 
   def take_turn
     show_sequence
-    if require_sequence
+    require_sequence
+    if !game_over?
       round_success_message
       self.sequence_length += 1
-    else
-      self.game_over = true
     end
   end
 
@@ -46,7 +45,7 @@ class Simon
   def require_sequence
     puts "Now enter the order of the colors just shown (separate with spaces)!"
     answer = gets.chomp.split.map(&:downcase)
-    answer == seq
+    self.game_over = (answer != seq)
   end
 
   def add_random_color
