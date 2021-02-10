@@ -1,4 +1,5 @@
 require 'byebug'
+require 'colorize'
 class Simon
   COLORS = %w(red blue green yellow)
 
@@ -36,7 +37,7 @@ class Simon
     add_random_color
     puts "Pay attention to the order of the colors shown:"
     seq.each do |color|
-      puts color
+      puts color.colorize(color.to_sym)
       sleep(1)
       system("clear")
     end
@@ -53,7 +54,7 @@ class Simon
   end
 
   def round_success_message
-    puts "Correct! Your current score is #{sequence_length - 1}. Get ready for the next round!"
+    puts "Correct! Your current score is #{sequence_length}. Get ready for the next round!"
     sleep(1)
     system("clear")
   end
