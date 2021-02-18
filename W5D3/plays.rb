@@ -32,13 +32,13 @@ class Play
 
   def self.find_by_playwright(playwright)
     data = PlayDBConnection.instance.execute(<<-SQL, playwright)
-      SELECT 
-        * 
-      FROM 
+      SELECT
+        *
+      FROM
         plays
       JOIN
-        playwrights ON plays.playwright_id = playwrights.id
-      WHERE 
+        playwrights on plays.playwright_id = playwrights.id
+      WHERE
         playwrights.name = ?
     SQL
   end
