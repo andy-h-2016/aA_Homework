@@ -89,12 +89,12 @@
 	};
 	
 	View.prototype.exercise3 = function() {
-	  const h1 = $("<h1>").text("I love jQuery");
+	  const h1 = $("<h1>").text("I hate jQuery");
 	  $("#easel").append(h1);
 	};
 	
 	View.prototype.exercise4 = function() {
-	  // $(".square:nth-child(even)").text("Jeff");
+	  $(".square:nth-child(even)").text("Jeff");
 	  //this could also be solved using iteration and %
 	};
 	
